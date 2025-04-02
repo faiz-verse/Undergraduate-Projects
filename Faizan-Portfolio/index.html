@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="">
+    <title>Portfolio | Faizan Khan</title>
+    <link rel="stylesheet" href="/portfolio.css">
+
+    <!-- icon -->
+    <link rel="icon" type="image/png" href="/images/FK logo.png">
+
+    <!-- for projects image slider -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+</head>
+
+<body class="bg-gray-900 font-kanit">
+    <!-- navigation -->
+    <!-- absolute -right-[100%] -->
+    <div class="flex justify-center">
+        <nav id="navbar"
+            class="bg-gray-500 bg-opacity-35 p-2 m-2 md:p-4 md:m-4 w-[65%] md:w-[40%] xl:w-1/4 rounded-xl z-30 fixed top-0">
+            <ul class="flex flex-row justify-between items-center">
+                <li class="logo">
+                    <!-- <span class="p-2 md:p-3 text-2xl font-extrabold" style="color:gold;">FK</span> -->
+                    <img class="w-10" src="/images/FK logo.png" alt="logo">
+                </li>
+                <a href="#home">
+                    <li
+                        class="p-2 md:p-3 rounded-md hover:bg-yellow-400 active:rounded-full transition-all ease-in duration-300">
+                        <svg class="w-[25px] h-[25px] md:w-[30px] md:h-[30px] text-white hover:text-black transition-all ease-in duration-300" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="1.5"
+                                d="m4 12 8-8 8 8M6 10.5V19a1 1 0 0 0 1 1h3v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h3a1 1 0 0 0 1-1v-8.5" />
+                        </svg>
+                    </li>
+                </a>
+                <a href="#about">
+                    <li
+                        class="p-2 md:p-3 rounded-md hover:bg-yellow-400 active:rounded-full transition-all ease-in duration-300">
+                        <svg class="w-[25px] h-[25px] md:w-[30px] md:h-[30px] text-white hover:text-black transition-all ease-in duration-300" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="1.5"
+                                d="M10 11h2v5m-2 0h4m-2.592-8.5h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                        </svg>
+                    </li>
+                </a>
+                <a href="#project">
+                    <li
+                        class="p-2 md:p-3 rounded-md hover:bg-yellow-400 active:rounded-full transition-all ease-in duration-300">
+                        <svg class="w-[25px] h-[25px] md:w-[30px] md:h-[30px] text-white hover:text-black transition-all ease-in duration-300" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="1.5"
+                                d="M5.005 11.19V12l6.998 4.042L19 12v-.81M5 16.15v.81L11.997 21l6.998-4.042v-.81M12.003 3 5.005 7.042l6.998 4.042L19 7.042 12.003 3Z" />
+                        </svg>
+                    </li>
+                </a>
+                <a href="#game">
+                    <li
+                        class="p-2 md:p-3 rounded-md hover:bg-yellow-400 active:rounded-full transition-all ease-in duration-300">
+                        <svg class="w-[25px] h-[25px] md:w-[30px] md:h-[30px] text-white hover:text-black transition-all ease-in duration-300" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M15 9h.01M8.99 9H9m12 3a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM6.6 13a5.5 5.5 0 0 0 10.81 0H6.6Z" />
+                        </svg>
+                    </li>
+                </a>
+                <a href="#contact">
+                    <li
+                        class="p-2 md:p-3 rounded-md hover:bg-yellow-400 active:rounded-full transition-all ease-in duration-300">
+                        <svg class="w-[25px] h-[25px] md:w-[30px] md:h-[30px] text-white hover:text-black transition-all ease-in duration-300" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="1.5"
+                                d="M18.427 14.768 17.2 13.542a1.733 1.733 0 0 0-2.45 0l-.613.613a1.732 1.732 0 0 1-2.45 0l-1.838-1.84a1.735 1.735 0 0 1 0-2.452l.612-.613a1.735 1.735 0 0 0 0-2.452L9.237 5.572a1.6 1.6 0 0 0-2.45 0c-3.223 3.2-1.702 6.896 1.519 10.117 3.22 3.221 6.914 4.745 10.12 1.535a1.601 1.601 0 0 0 0-2.456Z" />
+                        </svg>
+                    </li>
+                </a>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- home body -->
+    <div id="home" class="flex flex-col-reverse md:flex-row justify-center items-center md:h-screen">
+        <div class="md:w-1/3 m-6">
+            <!-- name -->
+            <div class="text-5xl md:text-7xl font-extrabold text-white mb-6">Faizan Khan</div>
+
+            <!-- tag -->
+            <div class="flex flex-row bg-gray-500 w-fit rounded-3xl mb-6">
+                <div class="p-3"><svg class="w-6 h-6 text-gray-300" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15 9h3m-3 3h3m-3 3h3m-6 1c-.306-.613-.933-1-1.618-1H7.618c-.685 0-1.312.387-1.618 1M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm7 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z" />
+                    </svg></div>
+                <div class="py-3 pr-3">Personal Portfolio</div>
+            </div>
+
+            <!-- typewriter -->
+            <div class="animated-text mb-6">
+                <b class="text-white font-semibold">I'm a</b>&nbsp;<span
+                    class="text:3xl md:text-4xl font-extrabold"></span>
+            </div>
+
+            <!-- short information -->
+            <p class="text-sm text-gray-400 mb-6 text-justify">
+                As a web developer and UI designer, I blend artistry and strategy to create beautiful, intuitive, and
+                user-friendly digital experiences that inspire, engage, and delight. With a strong background in coding,
+                design, and collaboration, I am dedicated to continuous learning and passionate about honing my skills
+                to deliver exceptional results.
+            </p>
+
+
+            <!-- download resume -->
+            <a href="/Faizan Khan CV.pdf"><button style="background-color: gold;"
+                    class="p-3 mb-6 rounded-md hover:shadow-md hover:shadow-gray-500 transition-all ease-in duration-[400ms]">
+                    Download Resume
+                </button></a>
+
+            <!-- links -->
+            <div class="flex flex-row justify-between w-1/2 mb-6">
+                <!-- linked in -->
+                <a href="https://www.linkedin.com/in/faizan-khan-03a6552b5/">
+                    <svg class="w-[25px] h-[25px] text-gray-400 hover:text-white" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                        viewBox="0 0 24 24">
+                        <path fill-rule="evenodd"
+                            d="M12.51 8.796v1.697a3.738 3.738 0 0 1 3.288-1.684c3.455 0 4.202 2.16 4.202 4.97V19.5h-3.2v-5.072c0-1.21-.244-2.766-2.128-2.766-1.827 0-2.139 1.317-2.139 2.676V19.5h-3.19V8.796h3.168ZM7.2 6.106a1.61 1.61 0 0 1-.988 1.483 1.595 1.595 0 0 1-1.743-.348A1.607 1.607 0 0 1 5.6 4.5a1.601 1.601 0 0 1 1.6 1.606Z"
+                            clip-rule="evenodd" />
+                        <path d="M7.2 8.809H4V19.5h3.2V8.809Z" />
+                    </svg></a>
+
+                <!-- github -->
+                <a href="https://github.com/KaizenCoder000">
+                    <svg class="w-[25px] h-[25px] text-gray-400 hover:text-white" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                        viewBox="0 0 24 24">
+                        <path fill-rule="evenodd"
+                            d="M12.006 2a9.847 9.847 0 0 0-6.484 2.44 10.32 10.32 0 0 0-3.393 6.17 10.48 10.48 0 0 0 1.317 6.955 10.045 10.045 0 0 0 5.4 4.418c.504.095.683-.223.683-.494 0-.245-.01-1.052-.014-1.908-2.78.62-3.366-1.21-3.366-1.21a2.711 2.711 0 0 0-1.11-1.5c-.907-.637.07-.621.07-.621.317.044.62.163.885.346.266.183.487.426.647.71.135.253.318.476.538.655a2.079 2.079 0 0 0 2.37.196c.045-.52.27-1.006.635-1.37-2.219-.259-4.554-1.138-4.554-5.07a4.022 4.022 0 0 1 1.031-2.75 3.77 3.77 0 0 1 .096-2.713s.839-.275 2.749 1.05a9.26 9.26 0 0 1 5.004 0c1.906-1.325 2.74-1.05 2.74-1.05.37.858.406 1.828.101 2.713a4.017 4.017 0 0 1 1.029 2.75c0 3.939-2.339 4.805-4.564 5.058a2.471 2.471 0 0 1 .679 1.897c0 1.372-.012 2.477-.012 2.814 0 .272.18.592.687.492a10.05 10.05 0 0 0 5.388-4.421 10.473 10.473 0 0 0 1.313-6.948 10.32 10.32 0 0 0-3.39-6.165A9.847 9.847 0 0 0 12.007 2Z"
+                            clip-rule="evenodd" />
+                    </svg></a>
+
+                <!-- instagram -->
+                <a href="https://www.instagram.com/sanji.arts/">
+                    <svg class="w-[25px] h-[25px] text-gray-400 hover:text-white" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path fill="currentColor" fill-rule="evenodd"
+                            d="M3 8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Zm5-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8Zm7.597 2.214a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2h-.01a1 1 0 0 1-1-1ZM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-5 3a5 5 0 1 1 10 0 5 5 0 0 1-10 0Z"
+                            clip-rule="evenodd" />
+                    </svg></a>
+
+                <!-- whatsapp -->
+                <a href="https://chat.whatsapp.com/Kk23SIvOei4LxXbmDSxGQS">
+                    <svg class="w-[25px] h-[25px] text-gray-400 hover:text-white" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path fill="currentColor" fill-rule="evenodd"
+                            d="M12 4a8 8 0 0 0-6.895 12.06l.569.718-.697 2.359 2.32-.648.379.243A8 8 0 1 0 12 4ZM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10a9.96 9.96 0 0 1-5.016-1.347l-4.948 1.382 1.426-4.829-.006-.007-.033-.055A9.958 9.958 0 0 1 2 12Z"
+                            clip-rule="evenodd" />
+                        <path fill="currentColor"
+                            d="M16.735 13.492c-.038-.018-1.497-.736-1.756-.83a1.008 1.008 0 0 0-.34-.075c-.196 0-.362.098-.49.291-.146.217-.587.732-.723.886-.018.02-.042.045-.057.045-.013 0-.239-.093-.307-.123-1.564-.68-2.751-2.313-2.914-2.589-.023-.04-.024-.057-.024-.057.005-.021.058-.074.085-.101.08-.079.166-.182.249-.283l.117-.14c.121-.14.175-.25.237-.375l.033-.066a.68.68 0 0 0-.02-.64c-.034-.069-.65-1.555-.715-1.711-.158-.377-.366-.552-.655-.552-.027 0 0 0-.112.005-.137.005-.883.104-1.213.311-.35.22-.94.924-.94 2.16 0 1.112.705 2.162 1.008 2.561l.041.06c1.161 1.695 2.608 2.951 4.074 3.537 1.412.564 2.081.63 2.461.63.16 0 .288-.013.4-.024l.072-.007c.488-.043 1.56-.599 1.804-1.276.192-.534.243-1.117.115-1.329-.088-.144-.239-.216-.43-.308Z" />
+                    </svg></a>
+            </div>
+        </div>
+
+        <!-- image blob -->
+        <div class="mt-14 md:pl-24 md:mt-0 md:w-1/3">
+            <div class="blob"></div>
+        </div>
+    </div>
+
+    <!-- about body -->
+    <div id="about" class="flex flex-col-reverse md:flex-row justify-center items-center mt-10">
+        <!-- first half -->
+        <div class="reveal md:w-1/3 m-6 flex flex-col">
+            <!-- title -->
+            <div class="text-4xl font-extrabold mb-6 text-left" style="color: gold;">Skills</div>
+            <div class="w-72 md:w-[80%] p-3 mb-2 rounded-lg flex flex-row bg-gray-500">
+                <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                    height="24" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="m3 2 1.578 17.824L12 22l7.467-2.175L21 2H3Zm14.049 6.048H9.075l.172 2.016h7.697l-.626 6.565-4.246 1.381-4.281-1.455-.288-2.932h2.024l.16 1.411 2.4.815 2.346-.763.297-3.005H7.416l-.562-6.05h10.412l-.217 2.017Z" />
+                </svg>
+                <div class="ml-4 text-lg font-semibold text-white">HTML</div>
+            </div>
+            <div class="w-72 md:w-[80%] p-3 mb-2 rounded-lg flex flex-row bg-gray-500">
+                <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="30"
+                    height="30" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="m3 2 1.578 17.834L12 22l7.468-2.165L21 2H3Zm13.3 14.722-4.293 1.204H12l-4.297-1.204-.297-3.167h2.108l.15 1.526 2.335.639 2.34-.64.245-3.05h-7.27l-.187-2.006h7.64l.174-2.006H6.924l-.176-2.006h10.506l-.954 10.71Z" />
+                </svg>
+                <div class="ml-4 text-lg font-semibold text-white">CSS</div>
+            </div>
+            <div class="w-72 md:w-[80%] p-3 mb-2 rounded-lg flex flex-row bg-gray-500">
+                <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="30"
+                    height="30" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M11.782 5.72a4.773 4.773 0 0 0-4.8 4.173 3.43 3.43 0 0 1 2.741-1.687c1.689 0 2.974 1.972 3.758 2.587a5.733 5.733 0 0 0 5.382.935c2-.638 2.934-2.865 3.137-3.921-.969 1.379-2.44 2.207-4.259 1.231-1.253-.673-2.19-3.438-5.959-3.318ZM6.8 11.979A4.772 4.772 0 0 0 2 16.151a3.431 3.431 0 0 1 2.745-1.687c1.689 0 2.974 1.972 3.758 2.587a5.733 5.733 0 0 0 5.382.935c2-.638 2.933-2.865 3.137-3.921-.97 1.379-2.44 2.208-4.259 1.231-1.253-.673-2.19-3.443-5.963-3.317Z" />
+                </svg>
+                <div class="ml-4 text-lg font-semibold text-white">Tailwind CSS</div>
+            </div>
+            <div class="w-72 md:w-[80%] p-3 mb-2 rounded-lg flex flex-row bg-gray-500">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0,0,256,256">
+                    <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                        stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                        font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                        style="mix-blend-mode: normal">
+                        <g transform="scale(5.12,5.12)">
+                            <path
+                                d="M45.274,2.325c-0.19,-0.207 -0.457,-0.325 -0.738,-0.325h-39.072c-0.281,0 -0.548,0.118 -0.738,0.325c-0.19,0.207 -0.283,0.485 -0.258,0.764l3.52,39.427c0.037,0.412 0.324,0.759 0.722,0.873l16.01,4.573c0.089,0.025 0.182,0.038 0.274,0.038c0.092,0 0.185,-0.013 0.274,-0.038l16.024,-4.573c0.398,-0.114 0.685,-0.461 0.722,-0.873l3.518,-39.427c0.025,-0.279 -0.069,-0.557 -0.258,-0.764zM12,29.004l7,1.942v-19.946h4v26l-11,-3.051zM38.054,22l-1.054,12.25l-10,2.75v-4.601l6.75,-1.855l0.25,-3.75l-7,1.206v-17h12l-0.345,4h-7.655v8z">
+                            </path>
+                        </g>
+                    </g>
+                </svg>
+                <div class="ml-4 text-lg font-semibold text-white">JavaScript</div>
+            </div>
+            <div class="w-72 md:w-[80%] p-3 mb-2 rounded-lg flex flex-row bg-gray-500">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0,0,256,256">
+                    <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                        stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                        font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                        style="mix-blend-mode: normal">
+                        <g transform="scale(8,8)">
+                            <path
+                                d="M15.99414,3c-0.365,0 -0.72992,0.08953 -1.04492,0.26953l-9.91016,5.7207c-0.64,0.37 -1.03906,1.07055 -1.03906,1.81055v10.37891c0,0.75 0.39906,1.44055 1.03906,1.81055l2.60156,1.5c1.26,0.62 1.7093,0.61914 2.2793,0.61914c1.87,0 2.93945,-1.12984 2.93945,-3.08984v-10.70898c0,-0.16 -0.12906,-0.29102 -0.28906,-0.29102h-1.25c-0.17,0 -0.29101,0.13102 -0.29101,0.29102v10.69922c0,0.88 -0.90891,1.73977 -2.37891,1.00977l-2.7207,-1.57031c-0.1,-0.05 -0.16016,-0.15953 -0.16016,-0.26953v-10.36914c0,-0.12 0.06016,-0.22125 0.16016,-0.28125l9.91016,-5.71875c0.09,-0.06 0.21055,-0.06 0.31055,0l9.91016,5.71875c0.1,0.06 0.16016,0.16148 0.16016,0.27148v10.37891c0,0.11 -0.06039,0.21953 -0.15039,0.26953l-9.91992,5.73047c-0.09,0.05 -0.22055,0.05 -0.31055,0l-2.55078,-1.50977c-0.07,-0.05 -0.16828,-0.05953 -0.23828,-0.01953c-0.71,0.4 -0.84,0.44969 -1.5,0.67969c-0.16,0.05 -0.41016,0.14969 0.08984,0.42969l3.30859,1.96094c0.32,0.18 0.68102,0.2793 1.04101,0.2793c0.37,0 0.72883,-0.0993 1.04883,-0.2793l9.92188,-5.73047c0.64,-0.37 1.03906,-1.06055 1.03906,-1.81055v-10.36914c0,-0.75 -0.39906,-1.44055 -1.03906,-1.81055l-9.92188,-5.73047c-0.315,-0.18 -0.67992,-0.26953 -1.04492,-0.26953zM18.66016,11.00586c-2.83,0 -4.51953,1.19922 -4.51953,3.19922c0,2.17 1.67844,2.76906 4.39844,3.03906c3.25,0.32 3.5,0.80141 3.5,1.44141c0,1.1 -0.88852,1.57031 -2.97852,1.57031c-2.63,0 -3.21039,-0.66094 -3.40039,-1.96094c-0.02,-0.14 -0.1393,-0.24023 -0.2793,-0.24023h-1.29101c-0.16,0 -0.2793,0.13125 -0.2793,0.28125c0,1.67 0.91,3.6582 5.25,3.6582c3.14,0 4.93945,-1.23844 4.93945,-3.39844c0,-2.14 -1.45023,-2.71109 -4.49023,-3.12109c-3.09,-0.4 -3.40039,-0.61008 -3.40039,-1.33008c0,-0.6 0.27078,-1.38867 2.55078,-1.38867c2.03,0 2.78961,0.43859 3.09961,1.80859c0.03,0.13 0.1393,0.23047 0.2793,0.23047h1.29102c0.08,0 0.14898,-0.03961 0.20898,-0.09961c0.05,-0.05 0.08031,-0.1307 0.07031,-0.2207c-0.2,-2.36 -1.76922,-3.46875 -4.94922,-3.46875z">
+                            </path>
+                        </g>
+                    </g>
+                </svg>
+                <div class="ml-4 text-lg font-semibold text-white">Node.js</div>
+            </div>
+            <div class="w-72 md:w-[80%] p-3 mb-2 rounded-lg flex flex-row bg-gray-500">
+                <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="30"
+                    height="30" fill="currentColor" viewBox="0 0 24 24">
+                    <path fill-rule="evenodd"
+                        d="M12.006 2a9.847 9.847 0 0 0-6.484 2.44 10.32 10.32 0 0 0-3.393 6.17 10.48 10.48 0 0 0 1.317 6.955 10.045 10.045 0 0 0 5.4 4.418c.504.095.683-.223.683-.494 0-.245-.01-1.052-.014-1.908-2.78.62-3.366-1.21-3.366-1.21a2.711 2.711 0 0 0-1.11-1.5c-.907-.637.07-.621.07-.621.317.044.62.163.885.346.266.183.487.426.647.71.135.253.318.476.538.655a2.079 2.079 0 0 0 2.37.196c.045-.52.27-1.006.635-1.37-2.219-.259-4.554-1.138-4.554-5.07a4.022 4.022 0 0 1 1.031-2.75 3.77 3.77 0 0 1 .096-2.713s.839-.275 2.749 1.05a9.26 9.26 0 0 1 5.004 0c1.906-1.325 2.74-1.05 2.74-1.05.37.858.406 1.828.101 2.713a4.017 4.017 0 0 1 1.029 2.75c0 3.939-2.339 4.805-4.564 5.058a2.471 2.471 0 0 1 .679 1.897c0 1.372-.012 2.477-.012 2.814 0 .272.18.592.687.492a10.05 10.05 0 0 0 5.388-4.421 10.473 10.473 0 0 0 1.313-6.948 10.32 10.32 0 0 0-3.39-6.165A9.847 9.847 0 0 0 12.007 2Z"
+                        clip-rule="evenodd" />
+                </svg>
+                <div class="ml-4 text-lg font-semibold text-white">GitHub, etc . . .</div>
+            </div>
+        </div>
+
+        <!-- second half -->
+        <div class="reveal md:w-1/3 my-6 ml-6 md:ml-0 mr-6 flex flex-col">
+            <!-- title -->
+            <div class="text-5xl md:text-7xl font-extrabold text-white mb-6 text-right">About</div>
+
+            <!-- about info -->
+            <p class="text-sm text-gray-400 mb-6 text-justify">
+                Hi there! My name is Khan Faizan, I am a beginner now but I am an enthusiastic programmer so I will keep
+                improving my skills through development of various projects, some of those are mentioned within the
+                portfolio.<br>As of now, I'm a web developer and UI designer with a passion for creating beautiful,
+                intuitive, and user-friendly digital experiences.
+            </p>
+        </div>
+    </div>
+
+    <!-- projects body -->
+    <div id="project" class="flex flex-col md:flex-row justify-center items-center mt-10 md:mt-28">
+        <!-- first half -->
+        <div class="reveal md:w-1/3 m-6 flex flex-col">
+            <!-- title -->
+            <div class="text-5xl md:text-7xl font-extrabold text-white mb-6 text-left">Projects</div>
+
+            <!-- project info -->
+            <p class="text-sm text-gray-400 mb-6 text-justify">
+                I'm proud to showcase some of my recent projects! Although they were made for the practice, And not for
+                clients yet.<br>One of the project is StudySage which was my final year project, And it is an E-learning
+                platform with better UI and some additional features.
+            </p>
+
+            <div class="font-bold text-lg" style="color: gold;">Links . . .</div>
+            <a href="https://studysage.onrender.com" class="text-gray-400 hover:text-white"><b
+                    class="text-sm font-semibold"> StudySage </b></a>
+            <a href="https://microsoft-a-cloned-one.onrender.com" class="text-gray-400 hover:text-white"><b
+                    class="text-sm font-semibold"> Microsoft Clone </b></a>
+            <a href="https://kaizencoder000.github.io/Avengers-Organisation" class="text-gray-400 hover:text-white"><b
+                    class="text-sm font-semibold"> Avengers Website </b></a>
+        </div>
+
+        <!-- second half -->
+        <div class="reveal md:w-1/3 m-6 flex flex-col">
+            <!-- project slider -->
+            <main class="grid w-full md:mt-10 place-content-center bg-gray-900">
+                <div x-data="imageSlider" class="relative mx-auto max-w-2xl overflow-hidden rounded-md bg-gray-100 p-2">
+                    <div
+                        class="absolute right-3 md:right-5 top-5 z-10 rounded-full bg-gray-600 px-2 text-center text-sm text-white">
+                        <span x-text="currentIndex"></span>/<span x-text="images.length"></span>
+                    </div>
+
+                    <button @click="previous()"
+                        class="absolute left-3 md:left-5 top-1/2 z-10 flex h-8 w-8 md:h-11 md:w-11 -translate-y-1/2 items-center justify-center rounded-full bg-gray-100 shadow-md">
+                        <i class="fas fa-chevron-left text-2xl font-bold text-gray-500"></i>
+                    </button>
+
+                    <button @click="forward()"
+                        class="absolute  right-3 md:right-5 top-1/2 z-10 flex h-8 w-8 md:h-11 md:w-11 -translate-y-1/2 items-center justify-center rounded-full bg-gray-100 shadow-md">
+                        <i class="fas fa-chevron-right text-2xl font-bold text-gray-500"></i>
+                    </button>
+
+                    <div class="relative h-36 md:h-52 w-[18rem] md:w-[25rem]">
+                        <template x-for="(image, index) in images">
+                            <div x-show="currentIndex == index + 1"
+                                x-transition:enter="transition transform duration-300"
+                                x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+                                x-transition:leave="transition transform duration-300"
+                                x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
+                                class="absolute top-0">
+                                <img :src="image" alt="image" class="rounded-sm" />
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </main>
+
+        </div>
+
+    </div>
+
+    <!-- Games -->
+    <div id="game"
+        class="reveal flex flex-col md:flex-row-reverse justify-center md:items-center md:mb-0 mt-10 md:mt-28">
+        <!-- first half -->
+        <div class="md:w-1/3 m-6 flex flex-col">
+            <!-- title -->
+            <div class="text-5xl md:text-7xl font-extrabold text-white mb-6 md:text-right">Games</div>
+            <!-- game info -->
+            <p class="text-sm text-gray-400 text-justify">
+                Some games you can try out that are simple and I am making them just for practice and fun!
+            </p>
+        </div>
+
+        <!-- second half -->
+        <div class="md:w-1/3 m-6 flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4">
+            <!-- game 1 -->
+            <button onclick="guess_the_number_game()" style="background-color: gold;"
+                class="p-3 rounded-md hover:shadow-md hover:shadow-gray-500 transition-all ease-in duration-[400ms]">
+                Guess the number!
+            </button>
+            <button onclick="rock_paper_scissor_game()" style="background-color: gold;"
+                class="p-3 rounded-md hover:shadow-md hover:shadow-gray-500 transition-all ease-in duration-[400ms]">
+                Rock | Paper | Scissor
+            </button>
+            <div class="text-xs md:text-lg md:pt-5 font-semibold text-yellow-400">more soon . . .</div>
+
+        </div>
+
+    </div>
+
+    <!-- contact body -->
+    <div id="contact"
+        class="reveal flex flex-col-reverse md:flex-row-reverse justify-center md:items-center md:mb-36 mt-10 md:mt-28 mb-32">
+        <!-- first half -->
+        <div class="md:w-1/3 m-6 flex flex-col">
+            <!-- title -->
+            <div class="text-2xl md:text-4xl font-extrabold mb-6 text-left" style="color: gold;">Get in Touch</div>
+            <div class="text-lg text-gray-500 font-semibold mb-6">Phone: +91 9324418597</div>
+            <div class="text-lg text-gray-500 font-semibold mb-6">Email: faizankhanofficial000@gmail.com</div>
+            <!-- links -->
+            <div class="flex flex-row justify-between w-1/2 mb-6">
+                <!-- linked in -->
+                <a href="https://www.linkedin.com/in/faizan-khan-03a6552b5/">
+                    <svg class="w-[25px] h-[25px] text-gray-400 hover:text-white" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                        viewBox="0 0 24 24">
+                        <path fill-rule="evenodd"
+                            d="M12.51 8.796v1.697a3.738 3.738 0 0 1 3.288-1.684c3.455 0 4.202 2.16 4.202 4.97V19.5h-3.2v-5.072c0-1.21-.244-2.766-2.128-2.766-1.827 0-2.139 1.317-2.139 2.676V19.5h-3.19V8.796h3.168ZM7.2 6.106a1.61 1.61 0 0 1-.988 1.483 1.595 1.595 0 0 1-1.743-.348A1.607 1.607 0 0 1 5.6 4.5a1.601 1.601 0 0 1 1.6 1.606Z"
+                            clip-rule="evenodd" />
+                        <path d="M7.2 8.809H4V19.5h3.2V8.809Z" />
+                    </svg></a>
+
+                <!-- github -->
+                <a href="https://github.com/KaizenCoder000">
+                    <svg class="w-[25px] h-[25px] text-gray-400 hover:text-white" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                        viewBox="0 0 24 24">
+                        <path fill-rule="evenodd"
+                            d="M12.006 2a9.847 9.847 0 0 0-6.484 2.44 10.32 10.32 0 0 0-3.393 6.17 10.48 10.48 0 0 0 1.317 6.955 10.045 10.045 0 0 0 5.4 4.418c.504.095.683-.223.683-.494 0-.245-.01-1.052-.014-1.908-2.78.62-3.366-1.21-3.366-1.21a2.711 2.711 0 0 0-1.11-1.5c-.907-.637.07-.621.07-.621.317.044.62.163.885.346.266.183.487.426.647.71.135.253.318.476.538.655a2.079 2.079 0 0 0 2.37.196c.045-.52.27-1.006.635-1.37-2.219-.259-4.554-1.138-4.554-5.07a4.022 4.022 0 0 1 1.031-2.75 3.77 3.77 0 0 1 .096-2.713s.839-.275 2.749 1.05a9.26 9.26 0 0 1 5.004 0c1.906-1.325 2.74-1.05 2.74-1.05.37.858.406 1.828.101 2.713a4.017 4.017 0 0 1 1.029 2.75c0 3.939-2.339 4.805-4.564 5.058a2.471 2.471 0 0 1 .679 1.897c0 1.372-.012 2.477-.012 2.814 0 .272.18.592.687.492a10.05 10.05 0 0 0 5.388-4.421 10.473 10.473 0 0 0 1.313-6.948 10.32 10.32 0 0 0-3.39-6.165A9.847 9.847 0 0 0 12.007 2Z"
+                            clip-rule="evenodd" />
+                    </svg></a>
+
+                <!-- instagram -->
+                <a href="https://www.instagram.com/sanji.arts/">
+                    <svg class="w-[25px] h-[25px] text-gray-400 hover:text-white" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path fill="currentColor" fill-rule="evenodd"
+                            d="M3 8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Zm5-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8Zm7.597 2.214a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2h-.01a1 1 0 0 1-1-1ZM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-5 3a5 5 0 1 1 10 0 5 5 0 0 1-10 0Z"
+                            clip-rule="evenodd" />
+                    </svg></a>
+
+                <!-- whatsapp -->
+                <a href="https://chat.whatsapp.com/Kk23SIvOei4LxXbmDSxGQS">
+                    <svg class="w-[25px] h-[25px] text-gray-400 hover:text-white" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path fill="currentColor" fill-rule="evenodd"
+                            d="M12 4a8 8 0 0 0-6.895 12.06l.569.718-.697 2.359 2.32-.648.379.243A8 8 0 1 0 12 4ZM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10a9.96 9.96 0 0 1-5.016-1.347l-4.948 1.382 1.426-4.829-.006-.007-.033-.055A9.958 9.958 0 0 1 2 12Z"
+                            clip-rule="evenodd" />
+                        <path fill="currentColor"
+                            d="M16.735 13.492c-.038-.018-1.497-.736-1.756-.83a1.008 1.008 0 0 0-.34-.075c-.196 0-.362.098-.49.291-.146.217-.587.732-.723.886-.018.02-.042.045-.057.045-.013 0-.239-.093-.307-.123-1.564-.68-2.751-2.313-2.914-2.589-.023-.04-.024-.057-.024-.057.005-.021.058-.074.085-.101.08-.079.166-.182.249-.283l.117-.14c.121-.14.175-.25.237-.375l.033-.066a.68.68 0 0 0-.02-.64c-.034-.069-.65-1.555-.715-1.711-.158-.377-.366-.552-.655-.552-.027 0 0 0-.112.005-.137.005-.883.104-1.213.311-.35.22-.94.924-.94 2.16 0 1.112.705 2.162 1.008 2.561l.041.06c1.161 1.695 2.608 2.951 4.074 3.537 1.412.564 2.081.63 2.461.63.16 0 .288-.013.4-.024l.072-.007c.488-.043 1.56-.599 1.804-1.276.192-.534.243-1.117.115-1.329-.088-.144-.239-.216-.43-.308Z" />
+                    </svg></a>
+            </div>
+
+        </div>
+
+        <!-- second half -->
+        <div class="md:w-1/3 my-6 ml-6 md:ml-0 mr-6 flex flex-col">
+            <!-- title -->
+            <div class="text-5xl md:text-7xl font-extrabold text-white mb-6 md:text-left">Contact</div>
+
+            <!-- contact info -->
+            <p class="text-sm text-gray-400 mb-6 text-justify">
+                If you are interested in discussing a potential project or have any further questions, I would be happy
+                to hear from you. Please feel free to contact me or send me a message, or you can email me!
+            </p>
+        </div>
+
+    </div>
+
+
+
+
+    <!--projects image slider scipt  -->
+    <script>
+        document.addEventListener("alpine:init", () => {
+            Alpine.data("imageSlider", () => ({
+                currentIndex: 1,
+                images: [
+                    "/images/avengers_website.png",
+                    "/images/microsoft_clone.png",
+                    "/images/studysage.png",
+                ],
+                previous() {
+                    if (this.currentIndex > 1) {
+                        this.currentIndex = this.currentIndex - 1;
+                    }
+                },
+                forward() {
+                    if (this.currentIndex < this.images.length) {
+                        this.currentIndex = this.currentIndex + 1;
+                    }
+                },
+            }));
+        });
+    </script>
+
+    <!-- reveal on scroll -->
+    <script type="text/javascript">
+        window.addEventListener('scroll', reveal);
+        function reveal() {
+            var reveals = document.querySelectorAll('.reveal');
+            for (var i = 0; i < reveals.length; i++) {
+                var windowheight = window.innerHeight;
+                var revealtop = reveals[i].getBoundingClientRect().top;
+                var revealpoint = 150;
+                if (revealtop < windowheight - revealpoint) {
+                    reveals[i].classList.add('active');
+                }
+                else {
+                    reveals[i].classList.remove('active');
+                }
+            }
+        }
+    </script>
+
+    <!-- script for games -->
+    <script src="/games.js"></script>
+
+</body>
+
+</html>
