@@ -1,0 +1,81 @@
+<header id="header" class="bg-gradient-to-r from-[#083d77] to-[#6ecfff] text-[#f1fffa] fixed top-0 w-full z-30">
+    <!-- navbar -->
+    <nav class="navbar flex justify-between items-center">
+
+        <!-- menu icon -->
+        <div class="flex items-center justify-center md:hidden">
+            <div class="hamburger p-3 cursor-pointer">
+                <ion-icon id="<%= toggleID %>" class="text-3xl" onclick="onToggleMenu(this)" name="menu"></ion-icon>
+            </div>
+        </div>
+
+        <div class="text-center md:order-1">
+            <a href="/">
+                <div class="logo flex items-center">
+                    <img class="w-16 p-2 pl-4 md:w-24" src="/icons/StudySage logo final.svg" alt="logo">
+                    <div
+                        class="text-2xl font-satisfy font-bold">
+                        Study<b class="font-extrabold">Sage</b></div>
+                </div>
+            </a>
+        </div>
+
+        <!-- features that have to be dislayed vertically on phone and have to be displayed horizontally after md breakpoint -->
+        <div id="toggle-menu"
+            class="bg-gradient-to-r from-[#083d77] to-[#6ecfff] md:bg-none dropdown-menu duration-500 md:static md:order-2 absolute top-[80px] -left-[100%] w-full md:w-fit flex items-center justify-center text-sm md:text-lg z-30">
+            <ul class="flex flex-col md:flex-row py-4 pb-10 md:py-3 items-center gap-[4vw] md:gap-[3vw]">
+                <li>
+                    <a class="cursor-pointer"
+                        href="/study-plan">Study plan</a>
+                </li>
+                <li>
+                    <a class="cursor-pointer"
+                        href="/study-tips">Study tips</a>
+                </li>
+                <li>
+                    <a class="cursor-pointer"
+                        href="/resource">Resources</a>
+                </li>
+                <li>
+                    <a class="cursor-pointer"
+                        href="/about">About us</a>
+                </li>
+                <li>
+                    <a class="cursor-pointer"
+                        href="/contact">Contact us</a>
+                </li>
+                <li>
+                    <div class="flex flex-row md:hidden">
+                    <a class="cursor-pointer"
+                        href="/sign-in">Sign In</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                    <a class="cursor-pointer"
+                        href="/sign-up">Sign Up</a></div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="flex items-center md:order-3">
+            <!--search after md that i will provide with functionality in future-->
+            <!-- <div class="search hidden transition-all md:flex mx-3">
+                <form action="" class="relative mx-auto w-max">
+                    <input type="search" placeholder="Search for resources . . ."
+                        class="cursor-pointer relative z-10 h-12 w-12 rounded-md border bg-transparent pl-12 outline-none focus:w-full focus:cursor-text focus:border-[#f1fffa] focus:pl-12 focus:pr-4" />
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="absolute inset-y-0 my-auto h-8 w-12 border-r border-transparent stroke-white px-3.5 peer-focus:border-[#f1fffa] peer-focus:stroke-[#f1fffa]"
+                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </form>
+            </div> -->
+            <!--account will be displayed always -->
+            <a href="/sign-in">
+                <div class="Account flex items-center py-6 md:py-0 px-5 cursor-pointer">
+                    <img class="w-8 md:w-9 transition-all md:hover:w-12 md:hover:py-0" src="/icons/account icon.png"
+                        alt="account icon">
+                </div>
+            </a>
+        </div>
+
+    </nav>
+</header>

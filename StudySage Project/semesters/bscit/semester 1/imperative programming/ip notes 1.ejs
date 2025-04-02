@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- including head -->
+<%- include('../../../../views/partials/head.ejs') %>
+
+    <body class="bg-[#effaff] font-quickSand">
+
+        <!-- including header -->
+        <%- include('../../../../views/partials/header.ejs') %>
+
+            <div id="blurContentBscitIpNotes1" class="pt-[88px]">
+                <div class="overflow-x-auto">
+                    <div
+                        class="align-middle inline-block min-w-full shadow overflow-hidden bg-transparent shadow-dashboard pt-4 px-2 md:px-8 rounded-bl-lg rounded-br-lg">
+                        <table class="min-w-full">
+                            <thead>
+                                <tr>
+                                    <th
+                                        class="px-3 py-2 md:px-6 md:py-4 border-b-2 border-gray-300 text-left text-blue-500">
+                                        Chapters</th>
+                                    <th class="w-1/3 px-3 py-2 md:px-6 md:py-4 border-b-2 border-gray-300"></th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-transparent">
+                                <!-- chapter 1-Introduction -->
+                                <tr>
+                                    <td class="px-3 py-1 md:px-6 md:py-3 whitespace-no-wrap border-b border-gray-500">
+                                        <div class="text-xs md:text-sm leading-5 text-gray-800">1-Introduction
+                                        </div>
+                                    </td>
+                                    <td
+                                        class="flex-col md:flex-row w-1/3 px-3 py-1 md:px-6 md:py-3 whitespace-no-wrap text-right border-b border-gray-500 text-xs md:text-sm leading-5">
+                                        <div class="flex flex-row justify-end">
+                                            <a href="/ip notes 1/1-Introduction">
+                                                <button
+                                                    class="px-3 py-1 mb-1 mr-1 border-[#3bbeff] border text-[#3bbeff] rounded transition duration-300 hover:bg-[#3bbeff] hover:text-white focus:outline-none">Read</button>
+                                            </a>
+                                            <a href="/ip notes 1/1-Introduction/download" target="_blank">
+                                                <button
+                                                    class="px-3 py-1 mb-1 border-[#3bbeff] border text-[#3bbeff] rounded transition duration-300 hover:bg-[#3bbeff] hover:text-white focus:outline-none">Download</button>
+                                            </a>
+                                        </div>
+                                        <button
+                                            class="w-[140px] md:w-[155px] px-3 py-1 mb-1 md:mb-0 border-[#3bbeff] border text-[#3bbeff] rounded transition duration-300 hover:bg-[#3bbeff] hover:text-white focus:outline-none"
+                                            onclick="openStudyPlanModal('1-Introduction by StudySage.pdf', event)">Add
+                                            to Plan
+                                        </button>
+                                    </td>
+                                </tr>
+                                <!-- chapter 2-C Fundamentals -->
+                                <tr>
+                                    <td class="px-3 py-1 md:px-6 md:py-3 whitespace-no-wrap border-b border-gray-500">
+                                        <div class="text-xs md:text-sm leading-5 text-gray-800">2-C Fundamentals</div>
+                                    </td>
+                                    <td
+                                        class="flex-col md:flex-row w-1/3 px-3 py-1 md:px-6 md:py-3 whitespace-no-wrap text-right border-b border-gray-500 text-xs md:text-sm leading-5">
+                                        <div class="flex flex-row justify-end">
+                                            <a href="/ip notes 1/2-C Fundamentals">
+                                                <button
+                                                    class="px-3 py-1 mb-1 mr-1 border-[#3bbeff] border text-[#3bbeff] rounded transition duration-300 hover:bg-[#3bbeff] hover:text-white focus:outline-none">Read</button>
+                                            </a>
+                                            <a href="/ip notes 1/2-C Fundamentals/download" target="_blank">
+                                                <button
+                                                    class="px-3 py-1 mb-1 border-[#3bbeff] border text-[#3bbeff] rounded transition duration-300 hover:bg-[#3bbeff] hover:text-white focus:outline-none">Download</button>
+                                            </a>
+                                        </div>
+                                        <button
+                                            class="w-[140px] md:w-[155px] px-3 py-1 mb-1 md:mb-0 border-[#3bbeff] border text-[#3bbeff] rounded transition duration-300 hover:bg-[#3bbeff] hover:text-white focus:outline-none"
+                                            onclick="openStudyPlanModal('2-C Fundamentals by StudySage.pdf', event)">Add
+                                            to Plan</button>
+                                    </td>
+                                </tr>
+
+                                <!-- Add more rows for additional chapters as needed -->
+
+
+
+                            </tbody>
+                        </table>
+                        <div class="bg-transparent py-20">&nbsp;<br>&nbsp;<br>&nbsp;<br></div>
+                    </div>
+                </div>
+
+
+                <!-- Modal that pops up -->
+                <div id="studyPlanModal"
+                    class="modal hidden fixed inset-0 items-center justify-center z-10 bg-blue-300 bg-opacity-25">
+                    <div class="bg-[#083d77] text-[#f1fffa] text-sm md:text-base rounded-lg m-4 p-3">
+                        <button id="closeStudyPlanModal" class="float-right flex justify-end"
+                            onclick="closeStudyPlanModal()">
+                            <img src="/icons/cancel icon.png" class="w-6" alt="cancel">
+                        </button>
+                        <!-- Modal content -->
+                        <h2 class="text-center font-semibold text-lg md:text-xl">Add to Study Plan</h2><br>
+                        <form>
+                            <!-- Form fields for selected PDF, set time and date, notification preferences -->
+                            <label for="selectedPdf">Selected PDF:</label>
+                            <input type="text" id="selectedPdf" name="selectedPdf" readonly
+                                class="text-black text-xs md:text-sm bg-blue-100 w-80 rounded-sm p-2"><br><br>
+
+                            <label for="completionDate">Set Date and Time for Completion: </label>
+                            <input type="datetime-local" id="completionDate" name="completionDate"
+                                class="text-black text-xs md:text-sm bg-blue-100 rounded-sm p-2"><br><br>
+
+                            <input type="checkbox" id="notificationCheckbox" name="notificationCheckbox" class="w-6">
+                            <label for="notificationCheckbox">Get Timely Notifications</label><br><br>
+
+                            <!-- Submit form button -->
+                            <div class="mt-4 text-center">
+                                <button id="studyPlanModalButton" type="button" onclick="submitStudyPlanForm()"
+                                    class="px-4 py-2 bg-[#396697] hover:bg-[#3bbeff] text-sm md:text-lg rounded-lg">Add
+                                    to the Plan</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div id="studyPlanMessageModal"
+                    class="modal hidden fixed inset-0 z-50 bg-blue-300 bg-opacity-25 flex items-center justify-center">
+                    <div class="bg-[#083d77] text-[#f1fffa] text-sm md:text-lg rounded-lg relative m-4">
+                        <!-- Modal content -->
+                        <button id="closeStudyPlanMessageModal" class=" float-right flex justify-end p-2"
+                            onclick="closeMessageModal()"><img src="/icons/cancel icon.png" class="w-6"
+                                alt="cancel"></button>
+                        <div class="py-8 px-12">
+                            <div class="mb-4"> <!-- Modal header -->
+                                <span id="studyPlanModalMessageTitle" class="font-bold text-xl md:text-2xl"> </span>
+                            </div>
+                            <div id="studyPlanModalMessageContent" class="text-center"> </div>
+                            <!-- Modal message -->
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <!-- including footer -->
+                <%- include('../../../../views/partials/footer.ejs') %>
+            </div>
+
+            <!-- script for the add to studyplan modal -->
+            <script>
+                // Function to open the modal
+                function openStudyPlanModal(pdfName, event) {
+                    // Prevent the default click behavior
+                    event.preventDefault();
+
+                    // Populate selected PDF field in the modal
+                    document.getElementById("selectedPdf").value = pdfName;
+                    // Show the modal
+                    document.getElementById("studyPlanModal").classList.remove("hidden");
+                    document.getElementById("studyPlanModal").classList.add("flex");
+                }
+
+                // Function to close the modal
+                function closeStudyPlanModal() {
+                    // Hide the modal
+                    document.getElementById("studyPlanModal").classList.remove("flex");
+                    document.getElementById("studyPlanModal").classList.add("hidden");
+                }
+
+                // Function to submit the form
+                function submitStudyPlanForm() {
+                    const selectedPdf = document.getElementById("selectedPdf").value;
+                    const completionDate = document.getElementById("completionDate").value;
+                    const notificationCheckbox = document.getElementById("notificationCheckbox").checked;
+
+                    const formData = {
+                        selectedPdf: selectedPdf,
+                        completionDate: completionDate,
+                        notificationCheckbox: notificationCheckbox
+                    };
+
+                    // Send formData to the server via fetch
+                    fetch('/submitStudyPlan', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(formData),
+                    })
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('Network response was not ok');
+                            }
+                            return response.json();
+                        })
+                        .then(data => {
+                            // Handle successful form submission
+                            console.log('Form submitted successfully:', data);
+                            closeModal();
+                            showMessageModal('Success', 'Your study plan has been submitted successfully.');
+                        })
+                        .catch(error => {
+                            // Handle form submission errors
+                            console.error('Error submitting form data:', error);
+                            closeModal();
+                            showMessageModal('Error', 'Failed to submit study plan. Please try again.');
+                        });
+                }
+
+
+                // Function to show message in modal
+                function showMessageModal(title, message) {
+                    // Show the message modal here
+                    // For example:
+                    document.getElementById("studyPlanMessageModal").classList.remove("hidden");
+                    document.getElementById("studyPlanModalMessageTitle").innerText = title;
+                    document.getElementById("studyPlanModalMessageContent").innerText = message;
+                }
+
+                // Function to close the modal
+                function closeModal() {
+                    // Hide the modal
+                    document.getElementById("studyPlanModal").classList.add("hidden");
+                }
+
+                // Function to close the message modal
+                function closeMessageModal() {
+                    // Hide the message modal
+                    document.getElementById("studyPlanMessageModal").classList.add("hidden");
+                }
+            </script>
+
+
+            <!-- script for toggle menu -->
+            <script>
+                const dropdownMenu = document.querySelector(".dropdown-menu");
+                function onToggleMenu(e) {
+                    e.name = e.name === "menu" ? "close" : "menu";
+                    dropdownMenu.classList.toggle("left-[0%]");
+                }
+                document.addEventListener('DOMContentLoaded', function () {
+                    const menuIcon = document.getElementById('toggle-button-bscit-ipnotes1');
+                    const blurContent = document.getElementById('blurContentBscitIpNotes1');
+
+                    menuIcon.addEventListener('click', function () {
+                        blurContent.classList.toggle('blur-sm');
+                        setTimeout(function () {
+                            blurContent.classList.toggle('in-trans');
+                        }, 300);
+                    });
+                }); 
+            </script>
+
+    </body>
+
+</html>

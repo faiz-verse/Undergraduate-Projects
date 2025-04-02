@@ -1,0 +1,1 @@
+this conatins part of code for header,footer,etc for all the views

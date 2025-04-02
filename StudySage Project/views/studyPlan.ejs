@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.9.0/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<!-- including head -->
+<%- include('./partials/head.ejs') %>
+
+    <body class="bg-[#effaff] font-quickSand">
+
+        <!-- including header -->
+        <%- include('./partials/header.ejs') %>
+
+            <div id="blurContentStudyplan" class="pt-[88px]">
+                <!-- ejs code for dinamic content -->
+
+                <div class="flex flex-col justify-center my-14 md:my-0 md:h-screen">
+
+                    <div class="flex justify-center items-center">
+
+                        <div class="stats m-4 md:m-6 flex flex-col md:flex-row bg-[#b6e6fe] text-primary-content">
+                            <div class="stat">
+                                <div class="font-semibold text-xs md:text-sm text-gray-600">Selected PDF: </div>
+                                <div class="font-bold text-sm md:text-xl">
+                                    <%= selectedPdfName %>
+                                </div>
+                                <div class="stat-actions">
+                                    <a href="<%= pdfRoute %>"><button
+                                            class="btn btn-sm md:btn-base transition-all duration-300 bg-white text-[#3bbeff]">Continue
+                                            Reading</button></a>
+                                </div>
+                            </div>
+                            <div class="stat">
+                                <div class="font-semibold text-xs md:text-sm text-gray-600">Time left for Completion:
+                                </div>
+                                <div id="timeLeftDisplay" class="font-bold text-sm md:text-xl mb-4"></div>
+                            </div>
+                            <!-- <div class="stat">
+                                <div class="font-semibold text-sm text-gray-600">Your Progress: </div>
+                                <div class="flex justify-center">
+                                    <div class="radial-progress text-blue-800 font-semibold mt-4" style="--value:<% 1 %>%; --size: 8rem; --thickness: 1rem;" role="progressbar"><% 1 %>%</div>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+
+                    <% if(notificationCheckbox==true){ %>
+                        <div class="text-gray-400 text-center text-sm md:text-base mb-8">Notifications will be sent
+                            every hour until you complete!</div>
+                        <% } %>
+
+                </div>
+
+
+
+
+
+                <!-- including footer -->
+                <%- include('./partials/footer.ejs') %>
+            </div>
+
+            <!-- script for toggle menu -->
+            <script>
+                const dropdownMenu = document.querySelector(".dropdown-menu");
+                function onToggleMenu(e) {
+                    e.name = e.name === "menu" ? "close" : "menu";
+                    dropdownMenu.classList.toggle("left-[0%]");
+                }
+                document.addEventListener('DOMContentLoaded', function () {
+                    const menuIcon = document.getElementById('toggle-button-studyplan');
+                    const blurContent = document.getElementById('blurContentStudyplan');
+
+                    menuIcon.addEventListener('click', function () {
+                        blurContent.classList.toggle('blur-sm');
+                        setTimeout(function () {
+                            blurContent.classList.toggle('in-trans');
+                        }, 300);
+                    })
+                });
+            </script>
+
+            <!--script for Include JavaScript to track study plan -->
+            <script>
+                // ----- FOR CALCULATING THE TIME LEFT -----
+
+                // Extract study plan details passed from server-side
+                var completionDate = '<%= completionDate %>';
+                var notificationCheckbox = '<%= notificationCheckbox %>';
+                var display = document.getElementById('timeLeftDisplay');
+
+                // Calculate time left to completion
+                function calculateTimeLeft(completionDate) {
+                    var currentDate = new Date();
+                    var targetDate = new Date(completionDate);
+                    var timeLeft = targetDate - currentDate;
+                    return timeLeft;
+                }
+
+                // Calculate time left to completion
+                var timeLeft = calculateTimeLeft(completionDate);
+
+                if (timeLeft <= 0) {
+                    display.innerHTML = `Time's Up!!!`;
+                } else {
+                    // Update time left display
+                    updateTimeLeftDisplay(timeLeft);
+                }
+
+                // Set interval to update time left display
+                setInterval(function () {
+                    timeLeft -= 1000; // Subtract 1 second
+                    updateTimeLeftDisplay(timeLeft);
+
+                    // Check if it's time to send a notification
+                    if (notificationCheckbox && timeLeft <= 0) {
+                        sendNotification('Your study plan completion date has arrived!');
+                    }
+                }, 1000); // Update every second
+
+
+                // Update time left display
+                function updateTimeLeftDisplay(timeLeft) {
+                    // Convert timeLeft to a human-readable format
+                    var seconds = Math.floor((timeLeft / 1000) % 60);
+                    var minutes = Math.floor((timeLeft / (1000 * 60)) % 60);
+                    var hours = Math.floor((timeLeft / (1000 * 60 * 60)) % 24);
+                    var days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+
+                    // Update the display
+                    if (days == 0) {
+                        display.innerHTML = hours + ' h &nbsp' + minutes + ' m &nbsp' + seconds + ' s';
+                    }
+                    else if (days == 1) {
+                        display.innerHTML = days + ' day<br>' + hours + ' h &nbsp' + minutes + ' m &nbsp' + seconds + ' s';
+                    }
+                    else if (days > 1) {
+                        display.innerHTML = days + ' days<br>' + hours + ' h &nbsp' + minutes + ' m &nbsp' + seconds + ' s';
+                    }
+
+                }
+            </script>
+
+    </body>
+
+</html>

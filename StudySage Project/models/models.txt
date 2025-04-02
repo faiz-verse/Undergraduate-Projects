@@ -1,0 +1,1 @@
+this file is for the model folder which contains mongoDB schemas js files
