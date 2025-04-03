@@ -1,4 +1,4 @@
-#🚀 My Pre-Graduation Projects 
+# 🚀 My Pre-Graduation Projects 
 
 This repository contains some of the small and fun projects I built before graduation. Each project represents a step in my learning journey, starting from basic web design to building a full-stack application.  
 
