@@ -38,7 +38,4 @@ This repository contains some of the small and fun projects I built before gradu
 
 ---  
 
-## 📌 About This Repository  
-This repo serves as a collection of my early projects, showcasing my learning path from basic web design to full-stack development.  
-
 💡 *Check them out and feel free to share your feedback!*  
