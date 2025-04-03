@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feat Systems | Job Portal</title>
+</head>
+<body>
+
+<script>
+    // Define your desktop and mobile links
+    var desktopLink = "http://tiny.cc/FeatSystemsJobPortal";
+    var mobileLink = "https://cloud.uipath.com/0481ac62-41d4-4048-9e13-e106a618396f/apps_/default/run/production/777c8518-3c4b-4112-8fbb-a16f67fa9d5c/feb1d8ff-2625-4f18-9716-b0c3ebf47cf6/ID3445208534514fd89ec1f1b6cea2fbc4/public?el=VB";
+
+    // Check if the user is on mobile based on screen width
+    if (window.innerWidth <= 768) {  // You can adjust the width value as per your needs
+        window.location.href = mobileLink;  // Redirect to mobile site
+    } else {
+        window.location.href = desktopLink;  // Redirect to desktop site
+    }
+</script>
+
+</body>
+</html>
