@@ -1,6 +1,44 @@
-# Links
+#🚀 My Pre-Graduation Projects 
 
-Avengers organisation: https://avengers-organisation.onrender.com <br>
-Microsoft clone: https://microsoft-clone-ezks.onrender.com <br>
-Study sage: https://study-sage.onrender.com <br>
-Faizan Portfolio: https://faizans-portfolio-v3iq.onrender.com
+This repository contains some of the small and fun projects I built before graduation. Each project represents a step in my learning journey, starting from basic web design to building a full-stack application.  
+
+## 📌 Projects  
+
+### 1️⃣ Avengers Organization  
+**Tech Stack:** Bootstrap  
+- My first web design project where I started learning **Bootstrap** and responsive web design.  
+
+🔗 [Live Demo](https://avengers-organisation.onrender.com)  
+
+---  
+
+### 2️⃣ Microsoft Clone  
+**Tech Stack:** Tailwind CSS  
+- A clone of the Microsoft website (at the time of development).  
+- Used **Tailwind CSS** to practice utility-first styling and modern web design techniques.  
+
+🔗 [Live Demo](https://microsoft-clone-ezks.onrender.com)  
+
+---  
+
+### 3️⃣ Study Sage (E-Learning Web App)  
+**Tech Stack:** Tailwind CSS (Frontend), Node.js + MongoDB (Backend)  
+- My biggest project before graduation!  
+- A fully functional **E-learning web app** built after learning full-stack development.  
+
+🔗 [Live Demo](https://study-sage.onrender.com)  
+
+---  
+
+### 4️⃣ Faizan's Portfolio  
+**Tech Stack:** Tailwind CSS  
+- A personal portfolio website I created in a rush before job hunting.  
+
+🔗 [Live Demo](https://faizans-portfolio-v3iq.onrender.com)  
+
+---  
+
+## 📌 About This Repository  
+This repo serves as a collection of my early projects, showcasing my learning path from basic web design to full-stack development.  
+
+💡 *Check them out and feel free to share your feedback!*  
