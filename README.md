@@ -21,7 +21,7 @@ This repository contains some of the small and fun projects I built before gradu
 
 ---  
 
-### 3️⃣ Study Sage (E-Learning Web App)  
+### 3️⃣ Study Sage (E-Learning Web App) 🔥  
 **Tech Stack:** Tailwind CSS (Frontend), Node.js + MongoDB (Backend)  
 - My biggest project before graduation! (My final year project)  
 - A fully functional **E-learning web app** built after learning full-stack development.  
